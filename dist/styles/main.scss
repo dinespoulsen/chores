@@ -1,7 +1,13 @@
 $padding-base: 16px;
+$padding-double: 32px;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
+  font-family: arial;
 }
 
 .app-bar {
@@ -11,6 +17,59 @@ body {
   padding: $padding-base;
   background-color: orange;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.app-body {
+  width: 100%;
+  padding: $padding-double $padding-base;
+}
+
+.chore {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &-status {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: $padding-base;
+  }
+
+  &-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__image {
+      height: 250px;
+      margin-bottom: $padding-base;
+    }
+
+    &__text {
+      text-align: center;
+      margin-bottom: $padding-double;
+    }
+  }
+
+  &-done-button {
+    display: flex;
+    justify-content: center;
+
+    button {
+      background-color: orange;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  }
 }
 
 .switch {
