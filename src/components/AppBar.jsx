@@ -1,5 +1,10 @@
 import React from 'react';
+import {OfflineSwitch} from './OfflineSwitch';
 
 export const AppBar = () => {
-  return <div>Hello World</div>
+  return (
+    <div className="app-bar">
+      <OfflineSwitch/>
+    </div>
+  )
 }
