@@ -5,13 +5,23 @@ import {AppBody} from './AppBody';
 export class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      isOffline: false
+    };
+
+    this.toggleOffline = this.toggleOffline.bind(this);
+  }
+
+  toggleOffline () {
+    this.setState({
+      isOffline: !this.state.isOffline
+    });
   }
 
   render() {
     return (
       <div>
-        <AppBar/>
+        <AppBar toggleOffline={this.toggleOffline}/>
         <AppBody/>
       </div>
     );

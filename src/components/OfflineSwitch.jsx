@@ -2,7 +2,7 @@ import React from 'react';
 import Switch from 'react-switch';
 
 export class OfflineSwitch extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       checked: true,
@@ -12,6 +12,7 @@ export class OfflineSwitch extends React.Component {
   }
 
   handleChange(checked) {
+    this.props.toggleOffline();
     this.setState({
       checked,
       isOffline: !this.state.isOffline

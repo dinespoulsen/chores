@@ -1,4 +1,5 @@
 const path = require('path');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   entry: './index.js',
@@ -21,4 +22,15 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
+  node: {
+    fs: 'empty'
+  },
+  plugins: [
+    new WriteFilePlugin({
+    // Write only files that have "sw.js" extension.
+    test: /\serviceWorker.js$/,
+    useHashIndex: true
+    })
+  ],
+  mode: 'development'
 };
